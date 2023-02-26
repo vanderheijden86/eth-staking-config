@@ -5,6 +5,9 @@ metadata:
   namespace: eth-nodes
 spec:
   client: teku
+  # This is the network-config specified in the teku-beacon configmap. Kotal will mount this file from the configmap
+  # into a volume inside the pod on below location.
+  network: "/opt/teku/kotal-config/network-config.yaml"
   image: consensys/teku:develop
   logging: info
   rest: true
@@ -20,4 +23,3 @@ spec:
   resources:
     cpu: "1"
     memory: "1Gi"
-

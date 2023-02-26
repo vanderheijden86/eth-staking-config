@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingresses
+  namespace: eth-nodes
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: /beacon-rest(/|$)(.*)
+        backend:
+          service:
+            name: teku-beacon
+            port:
+              number: 8888
+      - pathType: Prefix
+        path: /geth-rpc(/|$)(.*)
+        backend:
+          service:
+            name: geth
+            port:
+              number: 8545
