@@ -11,6 +11,7 @@ kubeadmConfigPatches:
 # 1 control plane node and 2 workers
 nodes:
 - role: control-plane
+  image: kindest/node:v1.26.0@sha256:691e24bd2417609db7e589e1a479b902d2e209892a10ce375fab60a8407c7352
   #- **node-labels** only allow the ingress controller to run on a specific node(s) matching the label selector
   kubeadmConfigPatches:
   - |
@@ -28,4 +29,6 @@ nodes:
     protocol: TCP
 # the two workers
 - role: worker
+  image: kindest/node:v1.26.0@sha256:691e24bd2417609db7e589e1a479b902d2e209892a10ce375fab60a8407c7352
 - role: worker
+  image: kindest/node:v1.26.0@sha256:691e24bd2417609db7e589e1a479b902d2e209892a10ce375fab60a8407c7352
