@@ -64,19 +64,26 @@ For `teku-kotal.yaml` you can use the following values:
 checkpointSyncUrl: "https://github.com/pk910/test-testnet-repo/releases/download/ephemery-64/genesis.ssz"
 ```
 
+**Bootnodes**
 For `{bootnodes}` look in ~/testnet-all/boot_enr.txt. Entries must be separated,by,commas and "enclosed in quotes". 
-In your `teku-kotal.yaml` you cannot add this yet, as Kotal doesn't support it yet. In a direct Teku config it is 
-be added like this flag to the teku command:
+In your `teku-kotal.yaml` you can add this like:
 
-```bash
---p2p-discovery-bootnodes {bootnodes}
+```yaml
+  bootnodes:
+    - enr:-Iq4QGdecZrX_n9aWd0T0r3w9aVTnjbrO9nyDSMunKwxh6M3fkTuDamFtcu4Ulgq82WA7V10XJJJgDFUqrYEGAonNGiGAYSHF-YRgmlkgnY0gmlwhIjzHgyJc2VjcDI1NmsxoQJDyix-IHa_mVwLBEN9NeG8I-RUjNQK_MGxk9OqRQUAtIN1ZHCCIyg
+    - enr:-Ly4QPV3Xkpt1mHGyxiflkPcTF_6ySM5J0CnzJn1XsmZ-R6lDCbtGGNmcdBv0F9OPNFE17c0ASWyTYj-MzBh50rQtwgBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpBaQ55pQAAQGwUAAAAAAAAAgmlkgnY0gmlwhIe1jKiJc2VjcDI1NmsxoQNm8zjpsaWBrGjgxmYltemjKegOnSpzQ0QaZ5cjo15svIhzeW5jbmV0cwCDdGNwgiNQg3VkcIIjUA
+    - enr:-Jq4QCP4f0z6BRbs3f2Pbkw8n842B5m6ram9bNr0EkZ5a9c3Y0LzHDUGXZQ5kKSxlYUJT-7J97SWAufLPr9ikQKqPZkBhGV0aDKQWkOeaUAAEBsFAAAAAAAAAIJpZIJ2NIJpcISI8x4MiXNlY3AyNTZrMaECZ3D1cbwdyk2ylwZhhcDv3ku4eVs-F3Kpt8VuJCGh_myDdWRwgiMp
 ```
 
-Network would be added like this
-```bash
---network ~/testnet-all/config.yaml \
-```
+**Network config**
+The network config can be found in the file `testnet-all/config.yaml` and you have to provide the contents of this 
+file, into a separate configmap you'll find at `eth-nodes/teku-beacon-configmap.yaml`. The contents of this 
+configmap are mounted into a volume inside the teku beacon pod. Kotal takes care of this for you. Only thing you 
+have to do further is specify to Teku in `teku-kotal.yaml` what network config file it needs to pick up. 
 
+```yaml
+network: "/opt/teku/kotal-config/network-config.yaml"
+```
 
 ## Running the eth clients
 
@@ -90,4 +97,9 @@ node.ethereum.kotal.io/geth-node created
 secret/jwt-secret configured
 secret/geth-nodekey configured
 ```
+
+## Interacting with the ethereum clients and their APIs
+
+Teku Beacon API
+http://localhost/beacon-rest/eth/v1/beacon/genesis
 
