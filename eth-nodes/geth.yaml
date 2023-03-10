@@ -1,0 +1,61 @@
+apiVersion: ethereum.kotal.io/v1alpha1
+kind: Node
+metadata:
+  name: geth
+  namespace: eth-nodes
+spec:
+  # this version contains latest changes relating to the shapella hardfork and withdrawals.
+  image: ethereum/client-go:v1.11.3
+  client: geth
+  nodePrivateKeySecretName: geth-nodekey
+  rpc: true
+  engine: true
+  enginePort: 8551
+  customGenesisFileConfigMapName: geth-custom-genesis
+  jwtSecretName: jwt-secret
+  rpcPort: 8545
+  p2pPort: 30303
+  rpcAPI:
+    - web3
+    - net
+    - eth
+  graphql: true
+  graphqlPort: 8546
+  syncMode: full
+  resources:
+    cpu: "1"
+    memory: "1Gi"
+  bootnodes:
+    - enode://0f2c301a9a3f9fa2ccfa362b79552c052905d8c2982f707f46cd29ece5a9e1c14ecd06f4ac951b228f059a43c6284a1a14fce709e8976cac93b50345218bf2e9@135.181.140.168:30343
+  genesis:
+    networkId: 39438064
+    chainId: 39438064
+    forks:
+      homestead: 0
+      eip150: 0
+      eip155: 0
+      eip158: 0
+      byzantium: 0
+      constantinople: 0
+      petersburg: 0
+      istanbul: 0
+      muirglacier: 0
+      berlin: 0
+      london: 0
+      mergeFor: 0
+      terminalTotalDifficulty: 0
+      shanghaiTime: 1677181020
+    coinbase: "0x0000000000000000000000000000000000000000"
+    difficulty: "0x01"
+    extraData: ""
+    gasLimit: "0x400000"
+    nonce: "0x1234"
+    mixhash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    parentHash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    timestamp: 1677178800
+    accounts:
+      - address: "0x48c5F25a884116d58A6287B72C9b069F936C9489"
+        balance: "0xffffffffffffffffffff"
+        storage:
+
+

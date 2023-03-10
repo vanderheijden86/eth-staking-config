@@ -1,6 +1,6 @@
 {
   "config": {
-    "chainId": 39438064,
+    "chainId": 39438066,
     "homesteadBlock": 0,
     "eip150Block": 0,
     "eip155Block": 0,
@@ -11,10 +11,9 @@
     "istanbulBlock": 0,
     "berlinBlock": 0,
     "londonBlock": 0,
-    "preMergeForkBlock": 0,
+    "mergeForkBlock": 0,
     "terminalTotalDifficulty": 0,
-    "shanghaiTime": 1677181020,
-    "ethash": {}
+    "shanghaiTime": 1678390620
   },
   "alloc": {
     "0x0000000000000000000000000000000000000000": {
@@ -893,12 +892,11 @@
     }
   },
   "coinbase": "0x0000000000000000000000000000000000000000",
-  "baseFeePerGas": "0x3B9ACA00",
   "difficulty": "0x01",
   "extraData": "",
   "gasLimit": "0x400000",
   "nonce": "0x1234",
   "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "timestamp": "1677178800"
+  "timestamp": "1678388400"
 }
