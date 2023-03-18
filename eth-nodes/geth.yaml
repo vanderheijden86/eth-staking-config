@@ -41,7 +41,7 @@ spec:
       london: 0
       mergeFor: 0
       terminalTotalDifficulty: 0
-      shanghaiTime: 1679172220
+      shanghaiTime: 1679177218
     coinbase: "0x0000000000000000000000000000000000000000"
     difficulty: "0x01"
 #    extraData: ""

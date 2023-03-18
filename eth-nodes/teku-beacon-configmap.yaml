@@ -15,7 +15,7 @@ data:
     MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 64
     # Mar-01-2021 08:53:32 AM +UTC
     # This is an invalid valid and should be updated when you create the genesis
-    MIN_GENESIS_TIME: 1679170000
+    MIN_GENESIS_TIME: 1679174998
     GENESIS_FORK_VERSION: 0x1000101b
     GENESIS_DELAY: 300
     
