@@ -31,5 +31,5 @@ for keystore in $KEYSTORE_DIR/*; do
     --from-file=keystore="$keystore" \
     --from-file=password="$secret_file"
 
-  echo "Created secret: $short_key_name
+  echo "Created secret: $short_key_name"
 done
