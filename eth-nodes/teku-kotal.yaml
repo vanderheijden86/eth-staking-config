@@ -12,7 +12,7 @@ spec:
   logging: info
   rest: true
   restPort: 8888
-  checkpointSyncUrl: "https://drive.google.com/file/d/1qrSvd7pOd3KyYofo6CErM1W5xwFCbNsk/view?usp=share_link"
+  checkpointSyncUrl: "https://github.com/vanderheijden86/eth-staking-config/blob/master/local-testnet-config/genesis.ssz?raw=true"
   executionEngineEndpoint: http://geth:8551
   jwtSecretName: "jwt-secret"
   feeRecipient: "0x0000000000000000000000000000000000000000"

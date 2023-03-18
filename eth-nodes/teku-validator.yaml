@@ -1,0 +1,223 @@
+apiVersion: ethereum2.kotal.io/v1alpha1
+kind: Validator
+metadata:
+  name: teku-validator
+  namespace: eth-nodes
+spec:
+  client: teku
+  network: custom
+  beaconEndpoints:
+    - http://teku-beacon:8888
+  graffiti: Fuckall
+  # my-vaidator secret must exist before deploying the validator
+  # my-validator secret must has [keystore] and [password] keys
+  # key is the keystore file
+  # password is the password file
+  keystores:
+    - secretName: 0x8040b6da244809286119e33bf937
+    - secretName: 0x80a85c6d315bdd4638a323dd6178
+    - secretName: 0x80c77d871e6eb574039f7420aa89
+    - secretName: 0x813525d0adfef8c53581ce7b27fe
+    - secretName: 0x818e926cf2976492d6b26dd63b1a
+    - secretName: 0x8216bda715c7e2c932f604b0bd40
+    - secretName: 0x827d3665bf2462f26e140e7da68c
+    - secretName: 0x829564d99b9f8db1fde585b3f1ed
+    - secretName: 0x8295cedc6aab1e1b25391122ef66
+    - secretName: 0x83c906e20cd759aee2e70d5f5e61
+    - secretName: 0x83f4e00e4f2d02c56ca174ad6806
+    - secretName: 0x8447425a684c50a8e2a5000ef6fd
+    - secretName: 0x84a4488672f8913dd2cf152317ba
+    - secretName: 0x85082b217dd059496a5d0b4236ad
+    - secretName: 0x852e5ecc68e14783668758cda18c
+    - secretName: 0x863bc4f69cd1a60b097ab2dcfd4a
+    - secretName: 0x8687230dffee8fdda14af072e3dd
+    - secretName: 0x8764c73ea394f8e1c423203b0bd0
+    - secretName: 0x87dffadb9bb0a663238481cf2032
+    - secretName: 0x87f51a51f473e3ef44b436c7f609
+    - secretName: 0x885afd28120ae67eec22421581e8
+    - secretName: 0x885ee4be5003a57f7f1926b32f97
+    - secretName: 0x8873b64a48ba7a5a9c99641707b0
+    - secretName: 0x8883264e3633499a618981f1ff9f
+    - secretName: 0x8894ffacfaeb5272b227f351a4e8
+    - secretName: 0x8895d75acd56ca9d68251a7546a2
+    - secretName: 0x89b0acf7c75781b9526c5034d3a7
+    - secretName: 0x89d554c919a4d65e7d8270920787
+    - secretName: 0x8a08453195224c530b9a58831c4a
+    - secretName: 0x8a2c559f2dd239603c47404d12db
+    - secretName: 0x8a41a0238730ce8c9215a5b01410
+    - secretName: 0x8a59e8908d2098469ff3d9c6d619
+    - secretName: 0x8ad41fc3f87f579c4682b32beec6
+    - secretName: 0x8ae92f7a4c005ede957d5a2376b6
+    - secretName: 0x8af57455d84042059c0dac9fb677
+    - secretName: 0x8b0d4c6f7ab13703076d41c85ec2
+    - secretName: 0x8b2b5ba687af09f0be2aa9248320
+    - secretName: 0x8b3136bfb2db2dae3ff968afdc44
+    - secretName: 0x8b625fde0aa1d603c6be316cbad5
+    - secretName: 0x8b6517d920b222f924ed4db0e6b3
+    - secretName: 0x8b89b2b60cf89f36ce61711ffa34
+    - secretName: 0x8c11c8c826fe293cb6a88a20dede
+    - secretName: 0x8c1d6fe901f3092cdddeb0497708
+    - secretName: 0x8c2a6074fca8392ecf90811f4ea6
+    - secretName: 0x8cbf1231505606c0d96016a73c00
+    - secretName: 0x8cdd0d037183f3223c6884a698e6
+    - secretName: 0x8cf3cee45de14cfd667d3a954e11
+    - secretName: 0x8d41e5eb9e6124258ece53731869
+    - secretName: 0x8d55b67ac9a3d3e434b3c0db357f
+    - secretName: 0x8dcb9d1fbf2850a923fd3c77e9c9
+    - secretName: 0x8e13dabf1ef0fb0a60d3a739bc3f
+    - secretName: 0x8e369c603b18d9285b605b099ddd
+    - secretName: 0x8e9394d24498c724492fa70c8bd5
+    - secretName: 0x8ec245bbc548b140e6c49b939c70
+    - secretName: 0x8ec5308021ea44a523b3dcda925d
+    - secretName: 0x90587876af51205d4ecb4e0547c0
+    - secretName: 0x90a15e64f3dbed4e47822ff218f2
+    - secretName: 0x90a1907eb1e7d840a8ee38dc8a41
+    - secretName: 0x91046cfaa3e434e44f27a268e8a3
+    - secretName: 0x919460de7a05fde25345c3137b0e
+    - secretName: 0x91fd6561c5fc578d3b366bf78093
+    - secretName: 0x9268b13d3c4a0542624c004be9c4
+    - secretName: 0x928137501b8856f7abd6b57ed052
+    - secretName: 0x928b685f4adb07269a628d381cdf
+    - secretName: 0x92d131b74cbb7ae631634ecc93cd
+    - secretName: 0x92e74f63f031af62b3ad32a425f4
+    - secretName: 0x930e184c09688921c4b46a2058cc
+    - secretName: 0x9353206d04fe7e30b1f72e04e84e
+    - secretName: 0x9377d0477c8b8574d42580e14b4e
+    - secretName: 0x93975bfa7499f9c27ced2db77ed0
+    - secretName: 0x93e476f73c684024afdbe4d4bf62
+    - secretName: 0x93f1697ef33d49d90d96104b2efb
+    - secretName: 0x93f7d4accb6a40f145c70cb030a8
+    - secretName: 0x94163175eecfaba2d820a42f2988
+    - secretName: 0x94d28d91db1e700821e09a7f0643
+    - secretName: 0x9596faafc9c97bc457bec3e726c0
+    - secretName: 0x95b9051b5c34c08f2b4661c475a6
+    - secretName: 0x962c7b4357b0c2c2be1703391de4
+    - secretName: 0x970697a23962858297d736a43e9c
+    - secretName: 0x970c84d4db6e8b3280ea8b333d34
+    - secretName: 0x975591b60aa05077d2273d9a3290
+    - secretName: 0x97752b7d6ee7bb15f56abb51c657
+    - secretName: 0x978a4aa5c085084f683c67eb53bf
+    - secretName: 0x97d90ed118b6c0ac1a8eb8fd4916
+    - secretName: 0x97e93d3b37101f282583d426e06e
+    - secretName: 0x98084265769d10d5a2fef75543af
+    - secretName: 0x980b595b3526085763d4247481fa
+    - secretName: 0x98206cf3d17e27b9a9af4acf7c33
+    - secretName: 0x9845c1b61f6ce8ea31216ddb5460
+    - secretName: 0x989b1d9b626417a8b2d93dfa2fac
+    - secretName: 0x98a72ec399b4719cabcd8be3e027
+    - secretName: 0x98bf4353d0b69c1fd5ddd09baa1f
+    - secretName: 0x98c20e91208440e6c8ae0697dbcf
+    - secretName: 0x98dd9a1c385f6f2f1fdfb655197d
+    - secretName: 0x9923f549433eef940f6967e4bcc5
+    - secretName: 0x99487d6ca27067abcc775b7acc0d
+    - secretName: 0x996cff8c2e70340f724f05eb7fd1
+    - secretName: 0x996f05eb4a72f551c789c61998b8
+    - secretName: 0x998b6b477e7c77d3044a79c1135f
+    - secretName: 0x99c2b96147d0c95280fb32a96a92
+    - secretName: 0x99c75fb649b432a2234d41fa914e
+    - secretName: 0xa05970d83a8ccaa2a9c14c4cb41b
+    - secretName: 0xa0c40684b33a7de7401b712f8465
+    - secretName: 0xa132287378fd95764454ef67b124
+    - secretName: 0xa1a8fa538e8cff3c383a14833287
+    - secretName: 0xa2f9f36be07b2a7df040ae493f71
+    - secretName: 0xa31c589a22b67e8f45f1bc115b58
+    - secretName: 0xa34f91356b4c3ee09bd8ce66688f
+    - secretName: 0xa35cd56001246110ddb681ed5d93
+    - secretName: 0xa3c51429f86d489ab8bd4a4905db
+    - secretName: 0xa3f4d244b0f0037e8d1afc25a97f
+    - secretName: 0xa3ff96ed274ef4ffb642d5f38dec
+    - secretName: 0xa43d138bdc27bfad51d1a5fa8494
+    - secretName: 0xa492e013f6c91a577bbe7af07ffe
+    - secretName: 0xa4eeb60127c84a564c4a82b1fb15
+    - secretName: 0xa5a9519580eeebd077b88ccc2ee2
+    - secretName: 0xa5d76cf8b3be85fd5d3b367c9e17
+    - secretName: 0xa5e8d19153827b7c7249837ede3c
+    - secretName: 0xa63603e11eedc6e42657a7b41edb
+    - secretName: 0xa65c742cc8c8d733fe300dc1cdb6
+    - secretName: 0xa65dd47b98aef786936033fb4419
+    - secretName: 0xa67ac91c97286adc60a6dfa1e439
+    - secretName: 0xa69afdc980e617b1977173750a64
+    - secretName: 0xa6d4feb4ec9b4c762f365259c744
+    - secretName: 0xa73b583cc9fc81baeba2819c96d8
+    - secretName: 0xa7a29752aae2036d8783123e3338
+    - secretName: 0xa86d1162228a4cf53cd61d68b314
+    - secretName: 0xa871e611ce11bcc02d04825bdab4
+    - secretName: 0xa8932923c69d2050683cbc4e7c6a
+    - secretName: 0xa9243cb8be943ccb67d34faf6017
+    - secretName: 0xa96df3fc7438b9c34ae6c2c2e83d
+    - secretName: 0xa98b8b6dad0d7fa901c165057e8b
+    - secretName: 0xa9a89b0cfa7f47a189122e7d9dd0
+    - secretName: 0xa9fabe80ebed918b6545a9692013
+    - secretName: 0xab16f678d3e113597ecee0c8373c
+    - secretName: 0xab38d5b9a0f35e4b535eb25b4ef8
+    - secretName: 0xab77bd78f2e1b22f1e1388bf01e5
+    - secretName: 0xaba66447425d1e4f269d829bb965
+    - secretName: 0xac2d348f66f19aca138602b78696
+    - secretName: 0xac785a9d1b241825fd6b8a5bbee8
+    - secretName: 0xacb16f086c6190d4415f68278b28
+    - secretName: 0xacb753f084317e9c82e7fe1e1e9a
+    - secretName: 0xadcb2dc3375f248530eb12be5c79
+    - secretName: 0xade3106e0b92329ad115786dab5d
+    - secretName: 0xae2fef4bdd8d0913b7234b68f369
+    - secretName: 0xae312be72a2061e2521d771229a5
+    - secretName: 0xae5038b5882b18d1ebd3067ba5d8
+    - secretName: 0xae756201dca9bddcd00659371230
+    - secretName: 0xaebfcad11f003c64d4f7f40d2a10
+    - secretName: 0xaee0cb90dec0ea6eba1296dde2c1
+    - secretName: 0xaefc6e0b7f4a8b4dcedc4c38c170
+    - secretName: 0xaf64dafdc76a32ab74d5509c0768
+    - secretName: 0xafc679b28caa112bf3020349b59d
+    - secretName: 0xafc8f94c257632263984dbb25c2f
+    - secretName: 0xafd80282dbf626b682c3356f53b2
+    - secretName: 0xafe5ea626fe73c25604ccf9cd8a0
+    - secretName: 0xaff86cb13c1a2e9910130522c2f5
+    - secretName: 0xb004072b035d9a2975c90ae02214
+    - secretName: 0xb052170419bcc440fa59c87a48dc
+    - secretName: 0xb07bf5db571c2a240955daf1ac7c
+    - secretName: 0xb0853dc92ff368484f14c16546da
+    - secretName: 0xb0f754ec7ff4dd045b32d111c628
+    - secretName: 0xb106aa02ec5088b504ea5b06736b
+    - secretName: 0xb14fc4513547effd1acc22d214a5
+    - secretName: 0xb1feccb5996facb591960176921f
+    - secretName: 0xb2135ba5aace5f33c3a109c447cb
+    - secretName: 0xb2651e16d5b50f919b5f3386944d
+    - secretName: 0xb273cc4a462370298e2bb6de270a
+    - secretName: 0xb2af7102f0d0e2507661a352f2e9
+    - secretName: 0xb33caaa4aea8c26bd3bbcd8f867b
+    - secretName: 0xb341d52a3f19eb4e678e8b6085d5
+    - secretName: 0xb35fc6b25acaf39245357dd49c06
+    - secretName: 0xb3a5921b99ebfa738ddeae907e72
+    - secretName: 0xb3d614dc6892fe38daba7b5f3c2c
+    - secretName: 0xb47375c62a5f06023acdef8199c6
+    - secretName: 0xb4af3335352adf001e2e16772cea
+    - secretName: 0xb4ce4106f8007add2500188fdfc0
+    - secretName: 0xb4fb66be86e7a87a704811fb2a7f
+    - secretName: 0xb53f412471fbe5868247b3f00106
+    - secretName: 0xb5429efba5d6186ce1b9e0e84260
+    - secretName: 0xb54396db39c43c911c378dd4b6b3
+    - secretName: 0xb54625be82fbe4814a7537a8d421
+    - secretName: 0xb5723c80c726005ad485e04495d0
+    - secretName: 0xb597a357d13857e1e1357ee46699
+    - secretName: 0xb5ec95706563a24547ff6df77a66
+    - secretName: 0xb5fa9dbdf262d56bf427758ce167
+    - secretName: 0xb602ba76db2a01bdf5e85b374fc2
+    - secretName: 0xb6313e618eccba720f5ddac6eb89
+    - secretName: 0xb73a0c6a7dae170f0fb1a36ab69b
+    - secretName: 0xb740b42216ba65e9acf4507ef466
+    - secretName: 0xb751fb347d81c369988843973d28
+    - secretName: 0xb82df9b1da464cc3619198a48d8a
+    - secretName: 0xb830daf3e469bbbdd2dcc038b061
+    - secretName: 0xb84b0ac12d372797f27560cd1406
+    - secretName: 0xb8c112c92e80e92eb4cbee1759cf
+    - secretName: 0xb930ecbf22b62e1b60f67c255978
+    - secretName: 0xb93d99b2eee52a9ea3bf3e130a6c
+    - secretName: 0xb97a0789ab5c97bbd461f5bf7e3f
+    - secretName: 0xb98fe2662efb4a0fb69c66f3911e
+    - secretName: 0xb9bcda6d2af1150a72f9ef3fe74b
+  feeRecipient: "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+  resources:
+    # these resources are only for testing
+    # change resources depending on your use case
+    cpu: "1"
+    memory: "1Gi"
+
