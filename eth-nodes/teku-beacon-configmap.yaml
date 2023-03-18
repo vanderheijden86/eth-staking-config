@@ -8,24 +8,24 @@ data:
     # Extends the mainnet preset
     PRESET_BASE: 'mainnet'
     CONFIG_NAME: testnet # needs to exist because of Prysm. Otherwise it conflicts with mainnet genesis
-  
+    
     # Genesis
     # ---------------------------------------------------------------
     # `2**14` (= 16,384)
     MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 64
     # Mar-01-2021 08:53:32 AM +UTC
     # This is an invalid valid and should be updated when you create the genesis
-    MIN_GENESIS_TIME: 1679166000
+    MIN_GENESIS_TIME: 1679168000
     GENESIS_FORK_VERSION: 0x1000101b
     GENESIS_DELAY: 300
-  
-  
+    
+    
     # Forking
     # ---------------------------------------------------------------
     # Some forks are disabled for now:
     #  - These may be re-assigned to another fork-version later
     #  - Temporarily set to max uint64 value: 2**64 - 1
-  
+    
     # Altair
     ALTAIR_FORK_VERSION: 0x2000101b
     ALTAIR_FORK_EPOCH: 0
@@ -35,15 +35,15 @@ data:
     TERMINAL_TOTAL_DIFFICULTY: 0
     TERMINAL_BLOCK_HASH: 0x0000000000000000000000000000000000000000000000000000000000000000
     TERMINAL_BLOCK_HASH_ACTIVATION_EPOCH: 18446744073709551615
-  
+    
     # Capella
     CAPELLA_FORK_VERSION: 0x4000101b
     CAPELLA_FORK_EPOCH: 5
-  
+    
     # EIP4844
     EIP4844_FORK_VERSION: 0x03001020
     EIP4844_FORK_EPOCH: 18446744073709551615
-  
+    
     # Time parameters
     # ---------------------------------------------------------------
     # 12 seconds
@@ -56,8 +56,8 @@ data:
     SHARD_COMMITTEE_PERIOD: 256
     # 2**11 (= 2,048) Eth1 blocks ~8 hours
     ETH1_FOLLOW_DISTANCE: 12
-  
-  
+    
+    
     # Validator cycle
     # ---------------------------------------------------------------
     # 2**2 (= 4)
@@ -70,12 +70,12 @@ data:
     MIN_PER_EPOCH_CHURN_LIMIT: 4
     # 2**16 (= 65,536)
     CHURN_LIMIT_QUOTIENT: 65536
-  
+    
     # Fork choice
     # ---------------------------------------------------------------
     # 40%
     PROPOSER_SCORE_BOOST: 40
-  
+    
     # Deposit contract
     # ---------------------------------------------------------------
     DEPOSIT_CHAIN_ID: 1
