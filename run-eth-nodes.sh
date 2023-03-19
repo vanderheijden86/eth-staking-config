@@ -67,8 +67,15 @@ function set_genesis_timestamp {
 # Sets the GENESIS_TIMESTAMP property in the values.env file to now + 10 minutes
 set_genesis_timestamp 600
 
+# run the build-genesis.sh script from the test-testnet-repo and return to here
+rm -rf ../test-testnet-repo/dist
+cd ../test-testnet-repo && bash scripts/build-genesis.sh && cd -
+cp ../test-testnet-repo/dist/genesis.ssz ../eth-staking-config/local-testnet-bootstrap/genesis.ssz
+
+
+
 # Copy the local-testnet-bootstrap folder to the kind node container
-# copy_local_testnet_bootstrap_to_kind_node_container
+copy_local_testnet_bootstrap_to_kind_node_container
 
 # Replace <NODE_NAME> with the Kubernetes node name in the manifest file
-# replace_node_name "$KUBE_MANIFEST_PATH" "$KIND_NODE_CONTAINER_NAME"
+replace_node_name "$KUBE_MANIFEST_PATH" "$KIND_NODE_CONTAINER_NAME"
