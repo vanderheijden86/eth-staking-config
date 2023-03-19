@@ -15,6 +15,9 @@ copy_local_testnet_bootstrap_to_kind_node_container() {
     exit 1
   fi
 
+  # First, remove the existing local-testnet-bootstrap folder from the Kind node container, if it exists:
+  docker exec "$KIND_NODE_CONTAINER_NAME" rm -rf /local-testnet-bootstrap
+
   # Copy the local-testnet-bootstrap folder to the kind node container
   docker cp "$LOCAL_TESTNET_BOOTSTRAP_PATH" "$KIND_NODE_CONTAINER_NAME":/local-testnet-bootstrap
 
