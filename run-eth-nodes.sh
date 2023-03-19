@@ -8,7 +8,7 @@ KUBE_MANIFEST_PATH="eth-nodes/clc-checkpoint-sync-server.yaml"
 
 copy_local_testnet_bootstrap_to_kind_node_container() {
   # Find the kind node container name
-  KIND_NODE_CONTAINER_NAME=$(docker ps --format '{{.Names}}' -f name=kind | head -n 1)
+  KIND_NODE_CONTAINER_NAME=$(docker ps --format '{{.Names}}' -f name=kind-worker | head -n 1)
 
   if [ -z "$KIND_NODE_CONTAINER_NAME" ]; then
     echo "No kind node container found. Make sure your kind cluster is running."

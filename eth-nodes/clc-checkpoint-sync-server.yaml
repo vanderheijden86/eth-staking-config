@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: server-config
+  namespace: eth-nodes
 data:
   entrypoint.sh: |
     #!/bin/sh
@@ -12,6 +13,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: local-testnet-bootstrap-pv
+  namespace: eth-nodes
 spec:
   capacity:
     storage: 100Mi
@@ -34,6 +36,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: local-testnet-bootstrap-pvc
+  namespace: eth-nodes
 spec:
   accessModes:
   - ReadWriteOnce
@@ -46,6 +49,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: checkpoint-sync-server
+  namespace: eth-nodes
   labels:
     app.kubernetes.io/name: checkpoint-sync-server
 spec:
@@ -74,6 +78,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: checkpoint-sync-server
+  namespace: eth-nodes
   labels:
     app.kubernetes.io/name: checkpoint-sync-server
 spec:

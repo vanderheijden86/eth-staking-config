@@ -36,7 +36,6 @@ spec:
       constantinople: 0
       petersburg: 0
       istanbul: 0
-      muirglacier: 0
       berlin: 0
       london: 0
       mergeFor: 0
@@ -44,10 +43,10 @@ spec:
       shanghaiTime: 1679255948
     coinbase: "0x0000000000000000000000000000000000000000"
     difficulty: "0x01"
-#    extraData: ""
+    extraData: ""
     gasLimit: "0x400000"
     nonce: "0x1234"
-#    mixhash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    mixHash: "0x0000000000000000000000000000000000000000000000000000000000000000"
     parentHash: "0x0000000000000000000000000000000000000000000000000000000000000000"
     timestamp: "1679253728"
     accounts:
