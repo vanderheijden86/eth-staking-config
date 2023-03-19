@@ -9,10 +9,10 @@ spec:
   # into a volume inside the pod on below location.
   network: "/opt/teku/kotal-config/network-config.yaml"
   image: consensys/teku:23.3.0
-  logging: info
+  logging: all
   rest: true
   restPort: 8888
-  checkpointSyncUrl: "https://github.com/vanderheijden86/eth-staking-config/blob/master/local-testnet-config/genesis.ssz?raw=true"
+  checkpointSyncUrl: "http://checkpoint-sync-server/genesis.ssz"
   executionEngineEndpoint: http://geth:8551
   jwtSecretName: "jwt-secret"
   feeRecipient: "0x0000000000000000000000000000000000000000"
