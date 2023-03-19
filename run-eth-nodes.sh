@@ -46,23 +46,26 @@ function set_genesis_timestamp {
         return 1
     fi
 
-    local current_timestamp=$(date +%s)
-    local new_timestamp=$((current_timestamp + offset))
-    local temp_file=$(mktemp)
-
     if [[ ! -f "$target_file" ]]; then
-        touch "$target_file"
+        echo "Target file $target_file does not exist."
+        return 1
     fi
 
-    awk -v new_timestamp="$new_timestamp" 'BEGIN{FS=OFS="="} /^GENESIS_TIMESTAMP/{$2=new_timestamp} 1' "$target_file" > "$temp_file" \
-        && mv "$temp_file" "$target_file"
+    local current_timestamp=$(date +%s)
+    local new_timestamp=$((current_timestamp + offset))
+
+    if grep -q '^export GENESIS_TIMESTAMP=' "$target_file"; then
+        sed -i.bak "s/^export GENESIS_TIMESTAMP=.*/export GENESIS_TIMESTAMP=$new_timestamp/" "$target_file" \
+        && rm -f "${target_file}.bak"
+    else
+        echo "export GENESIS_TIMESTAMP=$new_timestamp" >> "$target_file"
+    fi
 
     echo "GENESIS_TIMESTAMP updated to $new_timestamp in $target_file"
 }
 
 # Sets the GENESIS_TIMESTAMP property in the values.env file to now + 10 minutes
 set_genesis_timestamp 600
-
 
 # Copy the local-testnet-bootstrap folder to the kind node container
 # copy_local_testnet_bootstrap_to_kind_node_container
