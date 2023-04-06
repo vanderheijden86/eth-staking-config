@@ -31,5 +31,9 @@ el_premine_addrs: {
   "0xc90E920F4DCfd4954230edCaB168D0C5B9561e03": 1000000000ETH, # post-genesis distribution from https://github.com/taxmeifyoucan/ephemeral-testnet/blob/master/funding.txt  (pk910)
   "0x6Cc9397c3B38739daCbfaA68EaD5F5D77Ba5F455": 10000000ETH, # PoWFaucet: https://ephemery-faucet.pk910.de
   "0x992775d32fd0ec76b95C5E76CeEA92ED5a4bE1F9": 10000000ETH, # https://faucet.bordel.wtf/
+
+  # vdh keys
+  "0x2Fb5A5AEF30793F7587A5eB03aD98a2f254AFA5F": 1000000000ETH, # PK --> 0x7610167ea6766e1db147c20ecca9a83913a2d665994942ad7d27a0551d4e10e0
+
 }
 genesis_timestamp: ${GENESIS_TIMESTAMP}
