@@ -5,6 +5,7 @@ metadata:
   namespace: eth-nodes
 spec:
   client: teku
+  image: consensys/teku:23.3.0
   network: custom
   beaconEndpoints:
     - http://teku-beacon:8888

@@ -40,7 +40,7 @@ spec:
       london: 0
       mergeFor: 0
       terminalTotalDifficulty: 0
-      shanghaiTime: 1679255948
+      shanghaiTime: 1680808314
     coinbase: "0x0000000000000000000000000000000000000000"
     difficulty: "0x01"
     extraData: ""
@@ -48,7 +48,7 @@ spec:
     nonce: "0x1234"
     mixHash: "0x0000000000000000000000000000000000000000000000000000000000000000"
     parentHash: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    timestamp: "1679253728"
+    timestamp: "1680806094"
     accounts:
       - address: "0x0000000000000000000000000000000000000000"
         balance: '1'
@@ -644,6 +644,3 @@ spec:
         balance: '10000000000000000000000000'
       - address: "0x992775d32fd0ec76b95C5E76CeEA92ED5a4bE1F9"
         balance: '10000000000000000000000000'
-
-
-

@@ -1,5 +1,11 @@
 # Eth staking docs
 
+## ToDos
+- Update this readme
+- Change python server to upload server, and upload ssz file instead of copying it to node storage
+- Write script to automatically copy over custom genesis parameters to teku and geth
+- 
+
 ---
 ## Bootstrapping the secrets
 This part of the documentation only needs to be run once, and it's only needed if you want to generate fresh secrets 
